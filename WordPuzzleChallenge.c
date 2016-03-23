@@ -58,55 +58,70 @@ void printCoordinates(int row, int col, int d_row, int d_col, char *word){
 
 int main(int argc, char const *argv[]){
 
+    // Char matrix that contains the words to search in the puzzle array
     char *wordBank[] = {
         "FEBRUARY", "AUGUST", "JUNE", "JANUARY",
         "DECEMBER", "NOVEMBER", "APRIL", "SEPTEMBER",
         "JULY", "MARCH", "MAY", "OCTOBER"
     };
-
-    char puzzle[2500];
-    txtToArray("puzzle.txt", puzzle);
+    
+    char puzzle[2500]; // Array that contains the characters from the txt file
+    txtToArray("puzzle.txt", puzzle); // Loading the txt file into the array
 
     for (int z = 0; z < 12; z++){
        for (int i = 0; i < 50; i++){
             for (int j = 0; j < 50; j++){
+                
+                // Searching horizontally
                 if (wordSearch(i, j, 0, 1, wordBank[z], puzzle)){
                     printf("\nFound: %s\n", wordBank[z]);
                     printf ("Coordinates:\n");
                     printCoordinates(i, j, 0, 1, wordBank[z]);
                 }
+
+                // Searching vertically
                 if (wordSearch(i, j, 1, 0, wordBank[z], puzzle)){
                     printf("Found: %s\n", wordBank[z]);
                     printf ("Coordinates:\n");
                     printCoordinates(i, j, 1, 0, wordBank[z]);
                 }
+                
+                // Searching diagonally top-down
                 if (wordSearch(i, j, 1, 1, wordBank[z], puzzle)){
                     printf("\nFound: %s\n", wordBank[z]);
                     printf ("Coordinates:\n");
                     printCoordinates(i, j, 1, 1, wordBank[z]);
                 }
                 
+                // Searching horizontally (reverse)
                 if (wordSearch(i, j, 0, -1, wordBank[z], puzzle)){
                     printf("\nFound: %s\n", wordBank[z]);
                     printf ("Coordinates:\n");
                     printCoordinates(i, j, 0, -1, wordBank[z]);
                 }
+                
+                // Searching vertically (reverse)
                 if (wordSearch(i, j, -1, 0, wordBank[z], puzzle)){
                     printf("\nFound: %s\n", wordBank[z]);
                     printf ("Coordinates:\n");
                     printCoordinates(i, j, -1, 0, wordBank[z]);
                 }
+                
+                // Searching diagonally top-down (reverse)
                 if (wordSearch(i, j, -1, -1, wordBank[z], puzzle)){
                     printf("\nFound: %s\n", wordBank[z]);
                     printf ("Coordinates:\n");
                     printCoordinates(i, j, -1, -1, wordBank[z]);
                 }
 
+                // Seaching diagonally down-top
                 if (wordSearch(i, j, -1, 1, wordBank[z], puzzle)){
                     printf("\nFound: %s\n", wordBank[z]);
                     printf ("Coordinates:\n");
                     printCoordinates(i, j, -1, 1, wordBank[z]);
                 }
+
+                // Seaching diagonally down-top (reverse)
                 if (wordSearch(i, j, 1, -1, wordBank[z], puzzle)){
                     printf("\nFound: %s\n", wordBank[z]);
                     printf ("Coordinates:\n");
