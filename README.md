@@ -9,24 +9,24 @@ Feel free to suggest corrections and optimizations to the code with a pull reque
 
 # Compiling
 
-Windows
+Windows:
 
 - You need to be in the main folder of the project then run the following commands on the command prompt (cmd):
 
-- First run the command to compile the program "gcc WordPuzzleChallenge.c -o WordPuzzleChallenge".
+	- First run the command to compile the program "gcc WordPuzzleChallenge.c -o WordPuzzleChallenge".
 
-- You need to have gcc configured in your PATH in windows for the command to work.
+		- You need to have gcc configured in your PATH in windows for the command to work.
 
-- If you have "make" in your PATH, you simply can run the command "make WordPuzzleChallenge". To remove the compiled executable you can execute the command: "make clean"
+		- If you have "make" in your PATH, you simply can run the command "make WordPuzzleChallenge". To remove the compiled executable you can execute the command: "make clean"
 
-- After compiling the program, to execute it, do the command: "WordPuzzleChallenge". 
+	- After compiling the program, to execute it, do the command: "WordPuzzleChallenge". 
 
-Linux/Unix based OS
+Linux/Unix based OS:
 
 - You need to be in the main folder of the project then run the following commands on the terminal:
 
-- First run the command to compile the program: "make WordPuzzleChallenge". 
+	- First run the command to compile the program: "make WordPuzzleChallenge". 
+	
+		- To remove the compiled executable you can execute the command: "make clean".
 
-- To remove the compiled executable you can execute the command: "make clean".
-
-- After compiling the program, to execute it, do the command: "./WordPuzzleChallenge". 
+	- After compiling the program, to execute it, do the command: "./WordPuzzleChallenge". 
