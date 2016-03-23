@@ -7,8 +7,7 @@
 
 #define N 50
 
-/* As I am using the matrix as a vector, because a vector is faster to acess than a matrix,
-  there is a function to return the value of the array as if it were a matrix with : 
+/* Using matrix as a array, there is a function to return the value of the array as if it were a matrix with the rule: 
   matrix[i][j] = array[i * N + j] */
 char getCharInPosition(int i, int j, char *array){
     int index = i * N + j;
